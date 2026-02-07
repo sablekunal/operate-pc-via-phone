@@ -110,3 +110,9 @@ You can use our automated script or install manually.
 -   `README.md`: This guide.
 -   `scripts/install_tools.ps1`: Script to install required software.
 -   `scripts/connection_info.ps1`: Helper script to find your connection IP.
+
+--- 
+
+## 👨‍💻 Developers Note
+
+- we can use [rustdesk](https://rustdesk.com/) instead of spacedesk but it requires otp everytime you connect
