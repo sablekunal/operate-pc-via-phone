@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operate PC via Android - Manual</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="brand-text">PC Controller</div>
+        </div>
+
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#intro" class="nav-link active">
+                    <div class="nav-icon"><i class="fas fa-home"></i></div>
+                    <span>Overview</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#prerequisites" class="nav-link">
+                    <div class="nav-icon"><i class="fas fa-list-check"></i></div>
+                    <span>Prerequisites</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#installation" class="nav-link">
+                    <div class="nav-icon"><i class="fas fa-download"></i></div>
+                    <span>Installation</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#connection" class="nav-link">
+                    <div class="nav-icon"><i class="fas fa-network-wired"></i></div>
+                    <span>Connection</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#troubleshooting" class="nav-link">
+                    <div class="nav-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                    <span>Troubleshooting</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="container">
+            <header>
+                <h1>Operate PC via Phone <br><span style="font-size: 0.5em; color: var(--accent-color);">From any corner
+                        of world</span></h1>
+                <p class="subtitle">Complete guide to setting up your remote control system</p>
+            </header>
+
+            <!-- OVERVIEW SECTION -->
+            <section id="intro" class="content-section">
+                <div class="card">
+                    <h2><i class="fas fa-info-circle"></i> About This Project</h2>
+                    <p>This project provides a simple and effective way to turn your Android device into a second
+                        monitor or a touch-screen controller for your Windows PC, accessible from anywhere in the world.
+                    </p>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Core Concept:</strong> Using Spacedesk for display extension and Tailscale for
+                            secure remote connectivity.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-rocket" style="color: var(--accent-color);"></i> How It Works</h2>
+
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <img src="https://www.spacedesk.net/wp-content/uploads/spacedesk-logo.svg"
+                                alt="Spacedesk Logo" class="app-logo">
+                            <h3>1. Spacedesk</h3>
+                            <ul>
+                                <li><strong>Role:</strong> Turns your Android device into a secondary display.</li>
+                                <li><strong>Features:</strong> Drag windows, touch control (KVM), screen mirroring.</li>
+                                <li><strong>Requirement:</strong> Devices must be on the same network.</li>
+                            </ul>
+                        </div>
+
+                        <div style="flex: 1; min-width: 250px;">
+                            <img src="https://raw.githubusercontent.com/dkaser/unraid-tailscale/main/logo.png"
+                                alt="Tailscale Logo" class="app-logo" style="height: 40px; margin-top: 5px;">
+                            <h3>2. Tailscale</h3>
+                            <ul>
+                                <li><strong>Role:</strong> Creates a secure virtual private network (VPN).</li>
+                                <li><strong>Benefit:</strong> Tricks Spacedesk into thinking devices are on the same
+                                    local network, even if you are miles away (using mobile data or different Wi-Fi).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PREREQUISITES SECTION -->
+            <section id="prerequisites" class="content-section">
+                <div class="card">
+                    <h2><i class="fas fa-clipboard-list" style="color: var(--accent-color);"></i> Requirements</h2>
+                    <ul>
+                        <li><strong>Primary Device:</strong> Windows 10/11 PC.</li>
+                        <li><strong>Secondary Device:</strong> Android Phone or Tablet.</li>
+                        <li><strong>Internet:</strong> Both devices must be online.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- INSTALLATION SECTION -->
+            <section id="installation" class="content-section">
+                <div class="card">
+                    <h2><i class="fas fa-tools" style="color: var(--accent-color);"></i> Step 1: Windows PC Installation
+                    </h2>
+                    <p>You can use our automated script or install manually.</p>
+
+                    <h3>Option A: Automated Script (Recommended)</h3>
+                    <ol>
+                        <li>Open PowerShell as <strong>Administrator</strong>.</li>
+                        <li>Navigate to the project folder:</li>
+                    </ol>
+                    <pre><code>cd scripts
+.\install_tools.ps1</code></pre>
+                    <ol start="3">
+                        <li>Follow the prompts to install Spacedesk and Tailscale.</li>
+                        <li><strong>Reboot your PC</strong> after installation.</li>
+                    </ol>
+
+                    <h3>Option B: Manual Installation</h3>
+                    <ul>
+                        <li><strong>Spacedesk Driver:</strong> Download from <a
+                                href="https://www.spacedesk.net/#download" target="_blank">official website</a>.</li>
+                        <li><strong>Tailscale:</strong> Download from <a href="https://tailscale.com/download"
+                                target="_blank">official website</a> and log in.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-mobile-alt" style="color: var(--accent-color);"></i> Step 2: Android
+                        Installation</h2>
+                    <ol>
+                        <li>Go to the <strong>Google Play Store</strong>.</li>
+                        <li>Install <strong>Spacedesk (remote display)</strong>.</li>
+                        <li>Install <strong>Tailscale</strong>.</li>
+                        <li>Open Tailscale on Android and log in with the <strong>same account</strong> as your PC.</li>
+                        <li>Toggle "Active" to ON in Tailscale.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- CONNECTION SECTION -->
+            <section id="connection" class="content-section">
+                <div class="card">
+                    <h2>Scenario A: Home Network (Local Wi-Fi)</h2>
+                    <p><em>Used when both devices are connected to the same Wi-Fi router. Tailscale is not strictly
+                            needed here.</em></p>
+                    <ol>
+                        <li>Open <strong>Spacedesk App</strong> on Android.</li>
+                        <li>It should automatically detect your PC. Tap <strong>Connect</strong>.</li>
+                        <li>If not found, find your Local IP via <code>.\scripts\connection_info.ps1</code> and enter it
+                            manually.</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h2>Scenario B: Remote Connection (Anywhere)</h2>
+                    <p><em>Used when you are away from home (4G/5G/Different Wi-Fi).</em></p>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <strong>Ensure:</strong> Tailscale is Active on BOTH devices.
+                        </div>
+                    </div>
+
+                    <ol>
+                        <li><strong>On PC:</strong> Ensure Tailscale is running.</li>
+                        <li><strong>On Android:</strong> specific "Active" is toggled ON.</li>
+                        <li><strong>Get Tailscale IP:</strong> Run <code>.\scripts\connection_info.ps1</code> on PC and
+                            find the IP starting with <code>100.x.x.x</code>.</li>
+                        <li><strong>Connect:</strong>
+                            <ul>
+                                <li>Open Spacedesk on Android.</li>
+                                <li>Tap <strong>(+) Manual Connect</strong>.</li>
+                                <li>Enter the Tailscale IP.</li>
+                                <li>Tap Connect.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- TROUBLESHOOTING SECTION -->
+            <section id="troubleshooting" class="content-section">
+                <div class="card">
+                    <h2><i class="fas fa-question-circle" style="color: var(--accent-color);"></i> Common Issues</h2>
+
+                    <h3>Server not found</h3>
+                    <p>Check if Spacedesk Driver status is "ON" in the console. Ensure Firewall allows
+                        "spacedeskService" and "Tailscale".</p>
+
+                    <h3>Laggy Connection</h3>
+                    <p>Lower the resolution/quality in Spacedesk Viewer settings on Android.</p>
+
+                    <h3>Touch not working</h3>
+                    <p>Ensure "Touchscreen (absolute)" is enabled in Spacedesk Viewer settings.</p>
+                </div>
+
+                <div class="card" style="border-left: 5px solid #ef4444; background: #fff;">
+                    <h2><i class="fas fa-triangle-exclamation" style="color: #ef4444;"></i> Keyboard/Mouse Not Working?
+                    </h2>
+                    <div class="alert alert-danger">
+                        <i class="fas fa-lock"></i>
+                        <div>
+                            <strong>CRITICAL SECURITY REQUIREMENT</strong>
+                        </div>
+                    </div>
+                    <p>For keyboard and mouse remote control to work, you <strong>MUST</strong> enable security
+                        settings:</p>
+                    <ol>
+                        <li>On your PC, open the <strong>Spacedesk Driver Console</strong>.</li>
+                        <li>Go to the <strong>Control</strong> section.</li>
+                        <li>Check the box for <strong>"Password Protection & Encryption"</strong>.</li>
+                        <li>There are pre setted password (we cannot manually set it, just can shuffle it).</li>
+                        <li>Use this password when connecting from your phone.</li>
+                    </ol>
+                    <p><em>Without this step, Spacedesk disables remote input for security reasons.</em></p>
+                </div>
+            </section>
+
+            <footer style="text-align: center; margin-top: 4rem; opacity: 0.3;">
+                <p style="font-size: 8px;">fact : Earth is round</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

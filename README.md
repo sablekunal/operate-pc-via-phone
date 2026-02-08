@@ -102,6 +102,11 @@ You can use our automated script or install manually.
     -   Remote connections depend heavily on upload speed at home and download speed on mobile.
 -   **Touch not working**:
     -   Ensure "Touchscreen (absolute)" is enabled in Spacedesk Viewer settings.
+-   **Keyboard/Mouse not working**:
+    -   **CRITICAL**: You **MUST** enable "Password Protection & Encryption" in the Spacedesk Driver Console on your PC.
+    -   Open **Spacedesk Driver Console** -> **Control** -> Check **"Password Protection"** -> There are pre setted password (we cannot manually set it, just can shuffle it )
+    -   Use this password when connecting from your phone.
+
 
 ---
 
